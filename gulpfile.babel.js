@@ -20,8 +20,11 @@ var path = {
 }
 
 gulp.task('babelify', () => {
-  browserify(path.js.app)
-    .transform(babelify)
+  browserify(path.js.app, { debug: true })
+    .transform(babelify.configure({
+      presets: ["react"]
+    }))
+    .transform('browserify-shim', { global: true })
     .bundle()
     .on('error', err => {
       console.log(`Error: ${err.message}`);
@@ -68,7 +71,7 @@ gulp.task('nodemon', cb => {
 });
 
 
-gulp.task('default', ['browser-sync'], () => {
+gulp.task('default', ['babelify', 'browser-sync'], () => {
   gulp.watch('./public/index.html').on('change', reload);
   gulp.watch(path.jsx.watch).on('change', reload);
   gulp.watch(path.js.src, ['babelify']);
