@@ -39,6 +39,8 @@
   "description": "",
   "dependencies": {
     "history": "^4.0.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
     "react-router": "^2.8.0"
   }
 }
