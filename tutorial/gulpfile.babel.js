@@ -4,6 +4,7 @@ import babelify from 'babelify';
 import BrowserSync from 'browser-sync';
 import nodemon from 'gulp-nodemon';
 import source from 'vinyl-source-stream';
+import runSequence from 'run-sequence';
 
 const browserSync = BrowserSync.create(),
       reload = browserSync.reload;
@@ -15,12 +16,13 @@ var path = {
     dist: './public/js'
   },
   jsx: {
+    app: './src/jsx/app.jsx',
     watch: './src/jsx/**/*.jsx'
   }
 }
 
 gulp.task('babelify', () => {
-  browserify(path.js.app, { debug: true })
+  browserify(path.jsx.app, { debug: true })
     .transform(babelify.configure({
       presets: ["react"]
     }))
@@ -71,8 +73,11 @@ gulp.task('nodemon', cb => {
 });
 
 
-gulp.task('default', ['babelify', 'browser-sync'], () => {
+gulp.task('watch', () => {
   gulp.watch('./public/index.html').on('change', reload);
-  gulp.watch(path.jsx.watch).on('change', reload);
-  gulp.watch(path.js.src, ['babelify']);
+  gulp.watch(path.jsx.watch, e => runSequence('babelify', () => reload()));
+});
+
+
+gulp.task('default', ['babelify', 'browser-sync', 'watch'], () => {
 });
