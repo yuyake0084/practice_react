@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint client",
+    "watch": "watchify -d --extension=jsx ./client/scripts/app.jsx -t babelify -o ./client/build/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
     "browser-sync": "^2.14.0",
     "browserify": "^13.1.0",
     "browserify-shim": "^3.8.12",
+    "eslint": "^3.5.0",
+    "eslint-plugin-react": "^6.2.1",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.1.0",
     "gulp-react": "^3.1.0",
@@ -32,7 +35,7 @@
   "babel": {
     "presets": [
       "es2015",
-      "babelrc"
+      "react"
     ]
   },
   "homepage": "https://github.com/U-0084/practice_react#readme",
@@ -42,5 +45,8 @@
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-router": "^2.8.0"
+  },
+  "browserify-shim": {
+    "react": "global:React"
   }
 }
