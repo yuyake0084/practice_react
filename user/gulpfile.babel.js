@@ -14,17 +14,17 @@ var path = {
     watch: './client/**/*.html'
   },
   js: {
-    app: './client/scripts/app.js',
     watch: './client/**/*.js',
     dist: './client/build'
   },
   jsx: {
+    app: './client/scripts/app.jsx',
     watch: './client/scripts/views/**/*.jsx'
   }
 };
 
 gulp.task('babelify', () => {
-  browserify(path.js.app, { debug: true, extensions: ['.jsx'] })
+  browserify(path.jsx.app, { debug: true })
     .transform(babelify.configure({
       presets: ["react"]
     }))
