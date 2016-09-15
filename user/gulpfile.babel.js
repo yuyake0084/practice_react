@@ -12,7 +12,7 @@ const reload = browserSync.reload;
 
 var path = {
   html: {
-    watch: './client/**/*.html'
+    watch: './client/scripts/**/*.html'
   },
   js: {
     watch: './client/**/*.js',

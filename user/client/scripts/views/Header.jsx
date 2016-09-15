@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Router, { History, Link } from 'react-router';
 
 class Header extends Component {
