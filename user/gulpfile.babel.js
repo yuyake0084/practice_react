@@ -5,6 +5,7 @@ import BrowserSync from 'browser-sync';
 import nodemon from 'gulp-nodemon';
 import source from 'vinyl-source-stream';
 import runSequence from 'run-sequence';
+import shim from 'browserify-shim';
 
 const browserSync = BrowserSync.create();
 const reload = browserSync.reload;
@@ -19,21 +20,17 @@ var path = {
   },
   jsx: {
     app: './client/scripts/app.jsx',
-    watch: './client/scripts/views/**/*.jsx'
+    watch: './client/scripts/**/*.jsx'
   }
 };
 
-gulp.task('babelify', () => {
+gulp.task('browserify', () => {
   browserify(path.jsx.app, { debug: true })
-    .transform(babelify.configure({
-      presets: ["react"]
-    }))
-    .transform('browserify-shim', { global: true })
+    .transform(babelify)
     .bundle()
     .on('error', err => { console.log(`Error: ${err.message}`); })
     .pipe(source('bundle.js'))
     .pipe(gulp.dest(path.js.dist))
-    .pipe(reload({ stream: true }));
 });
 
 
@@ -75,14 +72,14 @@ gulp.task('nodemon', cb => {
 
 gulp.task('watch', () => {
   gulp.watch(path.html.watch, e => runSequence(() => reload()));
-  gulp.watch(path.jsx.watch, e => runSequence('babelify', () => reload()));
-  gulp.watch(path.js.app, e => runSequence('babelify', () => reload()));
+  gulp.watch(path.jsx.watch, e => runSequence('browserify', () => reload()));
+  gulp.watch(path.js.app, e => runSequence('browserify', () => reload()));
 });
 
 
 gulp.task('default', () => {
   runSequence(
-    'babelify',
+    'browserify',
     'browser-sync',
     'watch'
   );
