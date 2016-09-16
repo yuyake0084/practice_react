@@ -90,8 +90,8 @@ gulp.task('nodemon', cb => {
 
 gulp.task('watch', () => {
   gulp.watch('./client/index.html').on('change', reload);
-  gulp.watch(path.sass.watch, e => runSequence('sass', () => reload));
-  gulp.watch(path.jsx.watch, e => runSequence('babelify', () => reload));
+  gulp.watch(path.sass.watch, e => runSequence('sass', () => reload()));
+  gulp.watch(path.jsx.watch, e => runSequence('babelify', () => reload()));
 });
 
 

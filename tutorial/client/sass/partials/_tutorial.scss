@@ -1,25 +1,103 @@
+@import "../base/variable";
+
 .tutorial__hello__title {
   padding: 20px 0;
-  color: #00d8ff;
+  color: $brandColor;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  background-color: #222;
+  background: {
+    color: $brandBgColor;
+  }
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
 }
 .tutorial__tutorialList {
   width: 100%;
   max-width: 1000px;
-  margin: 30px auto 0;
+  margin: 50px auto 0;
   padding: 0 20px;
   & > li {
+    margin-top: 40px;
     padding: 20px;
-    border: 1px solid #ddd;
     border-radius: 10px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2);
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
+.tutorial__tutorial__title {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ededee;
+}
 .tutorial__tutorial__contents {
-  margin-top: 20px;
+  &.console {
+    padding: 10px 14px 12px;
+    color: #fff;
+    border-radius: 6px;
+    background: {
+      color: $brandBgColor;
+    }
+  }
 }
 .tutorial__timer__seconds {
+  margin-left: 16px;
   font-size: 20px;
+  color: $brandColor;
+}
+.tutorial__contentsAdd__form {
+  margin-top: 20px;
+}
+.tutorial__contentsAdd__title {
+  font: {
+    size: 34px;
+  }
+  text: {
+    align: center;
+  }
+}
+.tutorial__contentsAdd__list {
+  margin-top: 20px;
+  & > li {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+.tutorial__contentsAdd__inputText {
+  width: 80%;
+  padding: 6px 10px;
+  font: {
+    size: 16px;
+  }
+  border: 1px solid #ddd;
+  border: {
+    radius: 6px;
+  }
+}
+.tutorial__contentsAdd__btn {
+  width: 20%;
+  max-width: 140px;
+  margin-left: 10px;
+  padding: 6px 14px;
+  color: $brandColor;
+  font: {
+    size: 14px;
+  }
+  background: {
+    color: $brandBgColor;
+  }
+  border: {
+    radius: 9999px;
+  }
+}
+.tutorial__contentsAdd__text {
+  margin-top: 20px;
+  font: {
+    size: 20px;
+  }
 }
