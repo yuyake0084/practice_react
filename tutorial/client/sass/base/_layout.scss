@@ -1,3 +1,5 @@
+@import "./variable";
+
 * {
   box-sizing: border-box;
 }
@@ -7,4 +9,15 @@ body {
   background: {
     color: #fff;
   }
+}
+.header__title {
+  padding: 20px 0;
+  color: $brandColor;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  background: {
+    color: $brandBgColor;
+  }
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
 }

@@ -60,9 +60,9 @@ gulp.task('babelify', () => {
 gulp.task('browser-sync', () => {
   browserSync.init(null, {
     proxy: {
-      target: 'http://localhost:3000'
+      target: 'http://localhost:5000'
     },
-    port: 9000
+    port: 5000
   });
 });
 

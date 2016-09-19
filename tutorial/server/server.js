@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 5000));
 
 var clientPath = __dirname.replace('/server', '/client');
 
