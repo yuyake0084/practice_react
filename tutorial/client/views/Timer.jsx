@@ -24,7 +24,7 @@ class Timer extends Component {
   render() {
     return (
       <div>
-        <div className="tutorial__tutorial__contents console">
+        <div className="tutorial__contents console">
           <p>Connecting:<span className="tutorial__timer__seconds">{this.state.secondsElapsed}s</span></p>
         </div>
       </div>

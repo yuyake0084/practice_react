@@ -21,3 +21,14 @@ body {
   }
   box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
 }
+.footer__container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 30px 20px;
+  margin: 50px auto 0;
+  color: $brandColor;
+  text-align: center;
+  background: {
+    color: $brandBgColor;
+  }
+}

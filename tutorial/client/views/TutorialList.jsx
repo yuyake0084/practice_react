@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import Props from './Props.jsx';
 import Timer from './Timer.jsx';
 import ContentsAdd from './ContentsAdd.jsx';
+import MarkdownEditor from './MarkdownEditor.jsx';
 
 class TutorialList extends Component {
   constructor(...args) {
@@ -12,7 +13,8 @@ class TutorialList extends Component {
       list: [
         { id: 1, content: <Props name="React" /> },
         { id: 2, content: <Timer />},
-        { id: 3, content: <ContentsAdd /> }
+        { id: 3, content: <ContentsAdd /> },
+        { id: 4, content: <MarkdownEditor /> }
       ]
     }
   }
