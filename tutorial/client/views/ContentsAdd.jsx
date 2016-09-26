@@ -48,7 +48,6 @@ class ContentsAddForm extends Component {
   render() {
     return (
       <div>
-        <h3 className="tutorial__contentsAdd__title">Board</h3>
         <form className="tutorial__contentsAdd__form" onSubmit={this.handleSubmit}>
           <input className="tutorial__contentsAdd__inputText" onChange={this.onChange} value={this.state.text} />
           <button className="tutorial__contentsAdd__btn">{`Add ${this.state.items.length + 1} Comments`}</button>
