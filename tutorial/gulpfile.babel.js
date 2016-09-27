@@ -25,6 +25,9 @@ var path = {
       './client/sass/**/_*.scss'
     ]
   },
+  js: {
+    watch: './client/js/**/*.js'
+  },
   jsx: {
     app: './client/app.jsx',
     dist: './client/build',
@@ -92,6 +95,7 @@ gulp.task('watch', () => {
   gulp.watch('./client/index.html').on('change', reload);
   gulp.watch(path.sass.watch, e => runSequence('sass', () => reload()));
   gulp.watch(path.jsx.watch, e => runSequence('babelify', () => reload()));
+  gulp.watch(path.js.watch, e => runSequence('babelify', () => reload()));
 });
 
 

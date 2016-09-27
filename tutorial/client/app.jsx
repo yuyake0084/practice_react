@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Header from './views/Header.jsx';
-import TutorialList from './views/TutorialList.jsx';
-import Footer from './views/Footer.jsx';
+import Header from './js/Header.jsx';
+import TutorialList from './js/TutorialList.jsx';
+import Footer from './js/Footer.jsx';
 
 class App extends Component {
   constructor(...args) {

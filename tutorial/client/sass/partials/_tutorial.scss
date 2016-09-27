@@ -73,12 +73,12 @@
 .tutorial__contentsAdd__btn {
   margin-left: 10px;
   padding: 6px 14px;
-  color: $brandColor;
+  color: #fff;
   font: {
     size: 14px;
   }
   background: {
-    color: $brandBgColor;
+    color: $brandImportantColor;
   }
   border: {
     radius: 9999px;
@@ -131,7 +131,7 @@
   margin-top: 30px;
 
   & > li {
-    margin-top: 20px;
+    margin-top: 14px;
     padding: 20px;
     background: {
       color: #f5f5f5;
@@ -185,7 +185,7 @@ input::-webkit-input-placeholder {
 }
 .tutorial__commentForm__submit {
   padding: 10px 20px;
-  color: $brandColor;
+  color: #fff;
   font: {
     size: 16px;
   }
@@ -193,7 +193,7 @@ input::-webkit-input-placeholder {
     radius: 4px;
   }
   background: {
-    color: $brandBgColor;
+    color: $brandImportantColor;
   }
   &:hover {
     cursor: pointer;

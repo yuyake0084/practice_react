@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
-require('date-utils');
+import 'date-utils';
 
-class ContentsAdd extends Component {
+class Board extends Component {
   render() {
     const createItem = item => {
       let dt = new Date();
@@ -52,7 +52,7 @@ class ContentsAddForm extends Component {
           <input className="tutorial__contentsAdd__inputText" onChange={this.onChange} value={this.state.text} />
           <button className="tutorial__contentsAdd__btn">{`Add ${this.state.items.length + 1} Comments`}</button>
         </form>
-        <ContentsAdd items={this.state.items} />
+        <Board items={this.state.items} />
       </div>
     );
   }

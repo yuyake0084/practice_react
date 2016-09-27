@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Props from './Props.jsx';
 import Timer from './Timer.jsx';
-import ContentsAdd from './ContentsAdd.jsx';
+import Board from './Board.jsx';
 import MarkdownEditor from './MarkdownEditor.jsx';
 import CommentBox from './Comments/CommentBox.jsx';
+import FluxApp from './flux/app';
 
 class TutorialList extends Component {
   constructor(...args) {
@@ -14,9 +15,10 @@ class TutorialList extends Component {
       list: [
         { id: 1, name: 'Props', content: <Props name="React" /> },
         { id: 2, name: 'Timer', content: <Timer />},
-        { id: 3, name: 'Board', content: <ContentsAdd /> },
+        { id: 3, name: 'Board', content: <Board /> },
         { id: 4, name: 'MarkdownEditor', content: <MarkdownEditor /> },
-        { id: 5, name: 'CommentBox', content: <CommentBox /> }
+        { id: 5, name: 'CommentBox', content: <CommentBox /> },
+        { id: 6, name: 'Flux', content: <FluxApp /> }
       ]
     }
   }

@@ -8,8 +8,8 @@ class CommentBox extends Component {
     super(props);
     this.state = {
       data: [
-        { id: 1, author: 'Pete Hunt', text: 'This is one comment' },
-        { id: 2, author: 'Jordan Walke', text: 'This is *another* comment' }
+        { id: 1, author: 'Pete Hunt', text: 'This is one comment.' },
+        { id: 2, author: 'Jordan Walke', text: 'This is *another* comment.' }
       ]
     };
     this.handleCommentsSubmit = this.handleCommentsSubmit.bind(this);

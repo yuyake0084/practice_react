@@ -25,10 +25,11 @@ class CommentForm extends Component {
     let author = this.state.author.trim();
     let text = this.state.text.trim();
 
-    this.props.onCommentSubmit({ author, text });
     if (!text || !author) {
-      this.setState({ author: '', text: '' });
+      return;
     }
+    this.props.onCommentSubmit({ author, text });
+    this.setState({ author: '', text: '' });
   }
 
   render() {
