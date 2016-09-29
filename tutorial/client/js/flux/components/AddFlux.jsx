@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { addItem, getRandom } from '../actions/FluxActions';
 
-class AddFlux extends Component {
+export default class AddFlux extends Component {
   constructor() {
     super();
     this.add = this.add.bind(this);
@@ -34,5 +34,3 @@ class AddFlux extends Component {
     );
   }
 };
-
-export default AddFlux;

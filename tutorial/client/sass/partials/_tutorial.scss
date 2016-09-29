@@ -199,3 +199,16 @@ input::-webkit-input-placeholder {
     cursor: pointer;
   }
 }
+.tutorial__flux__btn {
+  padding: 10px 16px;
+  color: #fff;
+  background: {
+    color: $brandImportantColor;
+  }
+  border: {
+    radius: 4px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

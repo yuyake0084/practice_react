@@ -1,5 +1,5 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
-import FluxConstants from '../constants/FluxConstants';
+import { FluxConstants } from '../constants/FluxConstants';
 import { getRandomApi } from '../utils/RandomUserAPI';
 
 export function addItem() {
